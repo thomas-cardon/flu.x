@@ -8,8 +8,5 @@ and will prevent more errors from happening (for example if a website is down).
 ## Built with
 - [NodeJS](https://nodejs.org)
 
-## Credits
-Thanks to my friends who gave me the idea of making this software, without them this would've not existed!
-
 ## Contact
 You can use [Discord](https://discordapp.com/invite/4KTJax9) to contact me, if you have issues with the app or if you want to talk about enhancements!

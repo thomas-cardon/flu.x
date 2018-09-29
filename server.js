@@ -8,16 +8,17 @@ const Routes = require('./lib/routes');
 
 const server = Hapi.server({
     port: Settings.port,
-    host: 'localhost'
+    host: Settings.host
 });
 
 const init = async () => {
   await server.register([ require('vision'), require('inert') ]);
-  
+
   // View settings
   server.views({
     engines: { pug: require('pug') },
     path: path.join(__dirname, 'lib/views'),
+    helpersPath: path.join(__dirname, 'lib/helpers'),
     compileOptions: {
       pretty: false
     },
