@@ -1,0 +1,40 @@
+{
+  "name": "manaflux-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryzzzen/manaflux-server.git"
+  },
+  "keywords": [
+    "manaflux",
+    "league",
+    "of",
+    "legends",
+    "runes",
+    "perks",
+    "masteries",
+    "assistant",
+    "download",
+    "server"
+  ],
+  "author": "Ryzzzen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryzzzen/manaflux-server/issues"
+  },
+  "homepage": "https://github.com/ryzzzen/manaflux-server#readme",
+  "dependencies": {
+    "hapi": "^17.6.0",
+    "hoek": "^5.0.4",
+    "inert": "^5.1.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.0",
+    "pug": "^2.0.3",
+    "vision": "^5.4.0"
+  }
+}
