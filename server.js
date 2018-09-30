@@ -11,7 +11,8 @@ const mongoose = require('mongoose');
 
 const server = Hapi.server({
     port: Settings.port,
-    host: Settings.host
+    host: Settings.host,
+    debug: Settings.env === 'development' ? { request: ['error'] } : {}
 });
 
 const init = async () => {
