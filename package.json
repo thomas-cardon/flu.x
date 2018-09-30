@@ -30,6 +30,7 @@
   "homepage": "https://github.com/ryzzzen/manaflux-server#readme",
   "dependencies": {
     "hapi": "^17.6.0",
+    "hapi-mongoose": "^2.0.0",
     "hoek": "^5.0.4",
     "inert": "^5.1.0",
     "moment": "^2.22.2",

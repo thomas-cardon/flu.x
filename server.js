@@ -5,6 +5,9 @@ const Hapi = require('hapi'), Hoek = require('hoek');
 
 const Settings = require('./settings');
 const Routes = require('./lib/routes');
+const { ItemSet, PerkPage, ProviderData } = require('./lib/models');
+
+const mongoose = require('mongoose');
 
 const server = Hapi.server({
     port: Settings.port,
@@ -12,6 +15,7 @@ const server = Hapi.server({
 });
 
 const init = async () => {
+  mongoose.connect(Settings.db_url, { useNewUrlParser: true });
   await server.register([ require('vision'), require('inert') ]);
 
   // View settings
