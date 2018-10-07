@@ -3,5 +3,5 @@ module.exports = {
   "host": "0.0.0.0",
   "db_url": process.env.DB_URL,
   "password": process.env.PASSWORD,
-  "env": process.argv.includes('dev') ? 'development' : 'production'
+  "env": process.argv.includes('--dev') ? 'development' : 'production'
 }
