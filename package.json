@@ -1,14 +1,14 @@
 {
-  "name": "manaflux-server",
+  "name": "flu.x",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is intended to make Manaflux faster",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryzzzen/manaflux-server.git"
+    "url": "git+https://github.com/ryzzzen/flu.x.git"
   },
   "keywords": [
     "manaflux",
@@ -25,9 +25,9 @@
   "author": "Ryzzzen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryzzzen/manaflux-server/issues"
+    "url": "https://github.com/ryzzzen/flu.x/issues"
   },
-  "homepage": "https://github.com/ryzzzen/manaflux-server#readme",
+  "homepage": "https://github.com/ryzzzen/flu.x#readme",
   "dependencies": {
     "hapi": "^17.6.0",
     "hapi-mongoose": "^2.0.0",
