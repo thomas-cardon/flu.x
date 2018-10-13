@@ -5,7 +5,8 @@ const Hapi = require('hapi'), Hoek = require('hoek');
 
 const Settings = require('./settings');
 const Routes = require('./lib/routes');
-const { ItemSet, PerkPage, ProviderData } = require('./lib/models');
+
+const { PerkPage, SummonerSpellList, ItemSet, Block } = require('./lib/models');
 
 const mongoose = require('mongoose');
 
