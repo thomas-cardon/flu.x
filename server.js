@@ -9,7 +9,7 @@ const Login = require('./lib/helpers/Login');
 
 const mongoose = require('mongoose');
 
-const express = require('express'), compression = require('compression');
+const express = require('express'), session = require('express-session'), compression = require('compression');
 
 const app = express();
 

@@ -33,6 +33,7 @@
     "bcrypt": "^3.0.1",
     "compression": "^1.7.3",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "hapi": "^17.6.0",
     "hapi-auth-basic": "^5.0.0",
     "hapi-auth-jwt2": "^8.1.0",
