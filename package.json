@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This project is intended to make Manaflux faster",
   "main": "server.js",
+  "engines": {
+    "node": "10.6.0" 
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
