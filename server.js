@@ -2,11 +2,18 @@
 
 const path = require('path');
 
+let s = {};
+
+try {
+  s = require('./settings');
+}
+catch(err) {};
+
 const Settings = {
-  port: process.env.PORT || require('./settings').port,
-  secret: process.env.secret || require('./settings').secret,
-  db_url: process.env.db_url || require('./settings').db_url,
-  env: require('./settings').env
+  port: process.env.PORT || s.port,
+  secret: process.env.secret || s.secret,
+  db_url: process.env.db_url || s.db_url,
+  env: process.env.PORT ? 'production' : 'development'
 };
 
 const { PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
