@@ -18,6 +18,7 @@ const express = require('express'), session = require('express-session'), bodyPa
 const app = express();
 
 mongoose.connect(Settings.db_url, { useNewUrlParser: true });
+app.locals.moment = require('moment');
 
 app.use(session({
   secret: Settings.secret,
