@@ -4,7 +4,7 @@
   "description": "This project is intended to make Manaflux faster",
   "main": "server.js",
   "engines": {
-    "node": "10.6.0" 
+    "node": "10.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,17 +36,11 @@
     "bcrypt": "^3.0.1",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
+    "connect-mongo": "^2.0.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "hapi": "^17.6.0",
-    "hapi-auth-basic": "^5.0.0",
-    "hapi-auth-jwt2": "^8.1.0",
-    "hapi-mongoose": "^2.0.0",
-    "hoek": "^5.0.4",
-    "inert": "^5.1.0",
     "moment": "^2.22.2",
     "mongoose": "^5.3.0",
-    "pug": "^2.0.3",
-    "vision": "^5.4.0"
+    "pug": "^2.0.3"
   }
 }
