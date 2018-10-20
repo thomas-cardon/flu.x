@@ -29,7 +29,13 @@
   },
   "homepage": "https://github.com/ryzzzen/flu.x#readme",
   "dependencies": {
+    "@octokit/rest": "^15.13.1",
+    "bcrypt": "^3.0.1",
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
     "hapi": "^17.6.0",
+    "hapi-auth-basic": "^5.0.0",
+    "hapi-auth-jwt2": "^8.1.0",
     "hapi-mongoose": "^2.0.0",
     "hoek": "^5.0.4",
     "inert": "^5.1.0",
