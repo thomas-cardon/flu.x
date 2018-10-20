@@ -37,14 +37,14 @@ app.use('/data', require('./lib/controllers/Package'));
 app.use('/', require('./lib/controllers/Misc'));
 app.use('/', require('./lib/controllers/Dashboard'));
 
+app.use(function(err, req, res, next) {
+  res.status(500);
+  res.render('error', { error: err });
+});
+
 app.set('views','./lib/views');
 app.set('view engine', 'pug');
 
 app.listen(Settings.port, function () {
   console.log(`Flu.x running on port ${Settings.port}`);
-});
-
-process.on('unhandledRejection', (err) => {
-    console.log(err);
-    process.exit(1);
 });

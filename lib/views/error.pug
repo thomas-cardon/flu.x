@@ -1,0 +1,24 @@
+extends layout
+
+block styles
+  link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous")
+  link(rel='stylesheet' href='/styles/error.css')
+
+block content
+  body.text-center
+    .row
+      .col-md-12
+        .error-template
+          h1
+            | Oops!
+          h2
+            | An error occured
+          pre= error.toString()
+          .error-actions
+            a.btn.btn-primary.btn-lg(href='/')
+              span.glyphicon.glyphicon-home
+                i.fas.fa-home
+                | &nbsp;Dashboard
+            a.btn.btn-outline-secondary.btn-lg(disabled='')
+              span.glyphicon.glyphicon-envelope
+              |  Contact Support
