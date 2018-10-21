@@ -21,7 +21,9 @@ const Login = require('./lib/helpers/Login');
 
 const mongoose = require('mongoose');
 
-const express = require('express'), session = require('express-session'), bodyParser = require('body-parser'), compression = require('compression');
+const express = require('express'), bodyParser = require('body-parser'), compression = require('compression');
+
+const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 const app = express();
@@ -34,7 +36,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  cookie: { secure: Settings.env === 'production' }
+  cookie: { secure: false }
 }));
 
 app.use(compression());
