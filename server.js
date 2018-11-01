@@ -9,7 +9,7 @@ try {
 }
 catch(err) {};
 
-const Settings = {
+global.Settings = {
   port: process.env.PORT || s.port,
   secret: process.env.secret || s.secret,
   db_url: process.env.db_url || s.db_url,
@@ -23,21 +23,10 @@ const mongoose = require('mongoose');
 
 const express = require('express'), bodyParser = require('body-parser'), compression = require('compression');
 
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-
 const app = express();
 
 mongoose.connect(Settings.db_url, { useNewUrlParser: true });
 app.locals.moment = require('moment');
-
-app.use(session({
-  secret: Settings.secret,
-  resave: false,
-  saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  cookie: { secure: false }
-}));
 
 app.use(compression());
 app.use(bodyParser.json()); // for parsing application/json
