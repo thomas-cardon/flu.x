@@ -13,7 +13,10 @@ global.Settings = {
   port: process.env.PORT || s.port,
   secret: process.env.secret || s.secret,
   db_url: process.env.db_url || s.db_url,
-  env: process.env.PORT ? 'production' : 'development'
+  env: process.env.PORT ? 'production' : 'development',
+  REDIS_HOST: s.REDIS_HOST,
+  REDIS_USER: s.REDIS_USER,
+  REDIS_PASS: s.REDIS_PASS
 };
 
 const { PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
