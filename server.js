@@ -13,7 +13,8 @@ global.Settings = {
   port: process.env.PORT || s.port,
   secret: process.env.secret || s.secret,
   db_url: process.env.db_url || s.db_url,
-  env: process.env.PORT ? 'production' : 'development'
+  env: process.env.PORT ? 'production' : 'development',
+  coinhive_secret: process.env.COINHIVE_SECRET || s.coinhive_secret
 };
 
 const { PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
