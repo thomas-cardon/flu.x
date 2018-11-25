@@ -43,6 +43,7 @@ app.use(function(req, res, next) {
 app.use('/', express.static('static/public'));
 
 app.use('/data', require('./lib/controllers/Package'));
+app.use('/api', require('./lib/controllers/Alert'));
 app.use('/', require('./lib/controllers/Misc'));
 app.use('/', require('./lib/controllers/Dashboard'));
 
