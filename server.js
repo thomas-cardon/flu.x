@@ -14,7 +14,10 @@ global.Settings = {
   secret: process.env.secret || s.secret,
   db_url: process.env.db_url || s.db_url,
   env: process.env.PORT ? 'production' : 'development',
-  coinhive_secret: process.env.COINHIVE_SECRET || s.coinhive_secret
+  coinhive_secret: process.env.COINHIVE_SECRET || s.coinhive_secret,
+  firebase_projectId: process.env.FIREBASE_PROJECTID || s.firebase_projectId,
+  firebase_privateKey: process.env.FIREBASE_PRIVATEKEY || s.firebase_privateKey,
+  firebase_clientEmail: process.env.FIREBASE_CLIENTEMAIL || s.firebase_clientEmail,
 };
 
 const { PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
@@ -45,6 +48,7 @@ app.use('/', express.static('static/public'));
 app.use('/data', require('./lib/controllers/Package'));
 app.use('/api', require('./lib/controllers/Alert'));
 app.use('/', require('./lib/controllers/Misc'));
+app.use('/', require('./lib/controllers/SummonerPhoneData'));
 app.use('/', require('./lib/controllers/Dashboard'));
 
 app.use(function(err, req, res, next) {
