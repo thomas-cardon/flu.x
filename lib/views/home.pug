@@ -38,7 +38,7 @@ block content
                     pre #{report.logs}
                   .modal-footer
                     button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-          if wallet
+          if wallet && user.rank >= 1200
             .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
               h1.h2 Wallet
             .statistic-group(width='100%')
