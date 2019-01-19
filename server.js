@@ -48,7 +48,6 @@ app.use('/', express.static('static/public'));
 app.use('/data', require('./lib/controllers/Package'));
 app.use('/api', require('./lib/controllers/Alert'));
 app.use('/', require('./lib/controllers/Misc'));
-app.use('/', require('./lib/controllers/SummonerPhoneData'));
 app.use('/', require('./lib/controllers/Dashboard'));
 
 app.use(function(err, req, res, next) {
@@ -59,6 +58,4 @@ app.use(function(err, req, res, next) {
 app.set('views','./lib/views');
 app.set('view engine', 'pug');
 
-app.listen(Settings.port, function () {
-  console.log(`Flu.x running on port ${Settings.port}`);
-});
+app.listen(Settings.port, () => console.log(`Flu.x running on port ${Settings.port}`));
