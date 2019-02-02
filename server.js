@@ -20,7 +20,7 @@ global.Settings = {
   firebase_clientEmail: process.env.FIREBASE_CLIENTEMAIL || s.firebase_clientEmail,
 };
 
-const { PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
+const { Report, PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
 const Login = require('./lib/helpers/Login');
 
 const mongoose = require('mongoose');
@@ -52,7 +52,23 @@ app.use('/', require('./lib/controllers/Dashboard'));
 
 app.use(function(err, req, res, next) {
   res.status(500);
+
   res.render('error', { error: err });
+  console.error(err);
+
+  try {
+    await new Report({
+      text: `This error has been generated automatically by Flu.x.`,
+      type: 'FLUX_ERROR',
+      contact: null,
+      summonerId: null,
+      summonerName: null,
+      version: null,
+      _created: { type: Date, default: Date.now },
+      logs: err
+    }).save();
+  }
+  catch(err) {}
 });
 
 app.set('views','./lib/views');
