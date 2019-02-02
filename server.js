@@ -56,19 +56,16 @@ app.use(function(err, req, res, next) {
   res.render('error', { error: err });
   console.error(err);
 
-  try {
-    await new Report({
-      text: `This error has been generated automatically by Flu.x.`,
-      type: 'FLUX_ERROR',
-      contact: null,
-      summonerId: null,
-      summonerName: null,
-      version: null,
-      _created: { type: Date, default: Date.now },
-      logs: err
-    }).save();
-  }
-  catch(err) {}
+  new Report({
+    text: `This error has been generated automatically by Flu.x.`,
+    type: 'FLUX_ERROR',
+    contact: null,
+    summonerId: null,
+    summonerName: null,
+    version: null,
+    _created: { type: Date, default: Date.now },
+    logs: err
+  }).save().catch(err => {});
 });
 
 app.set('views','./lib/views');
