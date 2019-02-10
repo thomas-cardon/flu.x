@@ -21,7 +21,7 @@ global.Settings = {
 };
 
 const { Report, PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
-const Login = require('./lib/helpers/Login');
+const { Login, VersionChecker } = require('./lib/helpers');
 
 const mongoose = require('mongoose');
 
@@ -65,10 +65,20 @@ app.use(function(err, req, res, next) {
     version: null,
     _created: { type: Date, default: Date.now },
     logs: err
-  }).save().catch(err => {});
+  }).save().catch(err => console.error(err));
 });
 
 app.set('views','./lib/views');
 app.set('view engine', 'pug');
 
-app.listen(Settings.port, () => console.log(`Flu.x running on port ${Settings.port}`));
+VersionChecker.loadVersions().then(() => {
+  VersionChecker.searchForOutdatedData();
+  app.listen(Settings.port, () => console.log(`Flu.x running on port ${Settings.port}`));
+
+  setInterval(async () => {
+    console.log('Tasks >> Version checks');
+
+    await VersionChecker.loadVersions();
+    await VersionChecker.searchForOutdatedData();
+  }, 1000*3600*6);
+}).catch(err => console.error(err));
