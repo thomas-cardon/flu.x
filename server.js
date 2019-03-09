@@ -18,7 +18,7 @@ global.Settings = {
   firebase_projectId: process.env.FIREBASE_PROJECTID || s.firebase_projectId,
   firebase_privateKey: process.env.FIREBASE_PRIVATEKEY || s.firebase_privateKey,
   firebase_clientEmail: process.env.FIREBASE_CLIENTEMAIL || s.firebase_clientEmail,
-  features: process.env.FEATURES || s.features || [];
+  features: process.env.FEATURES || s.features || []
 };
 
 const { Report, PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
