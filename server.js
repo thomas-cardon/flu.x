@@ -1,7 +1,5 @@
 'use strict';
 
-const path = require('path');
-
 let s = {};
 
 try {
@@ -18,8 +16,10 @@ global.Settings = {
   firebase_projectId: process.env.FIREBASE_PROJECTID || s.firebase_projectId,
   firebase_privateKey: process.env.FIREBASE_PRIVATEKEY || s.firebase_privateKey,
   firebase_clientEmail: process.env.FIREBASE_CLIENTEMAIL || s.firebase_clientEmail,
-  features: (process.env.FEATURES || s.features || []).split(';')
+  features: (process.env.FEATURES || s.features || '').split(';')
 };
+
+global.appRoot = require('path').resolve(__dirname);
 
 const { Report, PerkPage, SummonerSpellList, ItemSet, Block, User } = require('./lib/models');
 const { Login, VersionChecker } = require('./lib/helpers');
@@ -59,11 +59,10 @@ app.use(function(err, req, res, next) {
   new Report({
     text: `This error has been generated automatically by Flu.x.`,
     type: 'FLUX_ERROR',
-    contact: null,
-    summonerId: null,
-    summonerName: null,
-    version: null,
-    _created: { type: Date, default: Date.now },
+    contact: '@Ryzzzen',
+    summonerId: 0,
+    summonerName: 'Ryzzzen',
+    version: 'flux/master',
     logs: err
   }).save().catch(err => console.error(err));
 });
