@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/ryzzzen/flu.x#readme",
   "dependencies": {
-    "bcrypt": "^3.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "connect-mongo": "^2.0.1",
